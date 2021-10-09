@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint ./src --ext .js"
   },
   "dependencies": {
     "gatsby": "^3.13.1",
@@ -22,6 +23,12 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.42.1"
+    "sass": "^1.42.1",
+    "yarn": "^1.22.15"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
+    "gatsby-plugin-prettier-eslint": "^1.0.6"
   }
 }
