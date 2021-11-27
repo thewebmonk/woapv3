@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&display=swap');
+@import './variable.scss';
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif !important;
+}
+body {
+  background-color: $blue;
+  font-family: 'Inter', sans-serif;
+}
+nav {
+  padding: 1.5rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .brand-with-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .brand {
+      // background-color: yellow;
+      height: 3rem;
+      margin-right: 1.5rem;
+      img {
+        height: 100%;
+      }
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      font-size: 0.8rem;
+      color: rgba($color: #fff, $alpha: 0.5) !important;
+      margin-left: 2rem;
+    }
+  }
+}
+
+.search-box {
+  width: 400px;
+  background-color: rgba($color: #fff, $alpha: 0.08);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: rgba($color: #fff, $alpha: 0.8);
+    padding: 0.8rem 1rem;
+    width: 100%;
+  }
+  .search-icon {
+    height: 20px;
+    width: 20px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.landing {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: rgba($color: #fff, $alpha: 0.5);
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    color: #fff;
+    max-width: 800px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+  }
+}
+
+.button {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid $red;
+  border-radius: 0.2rem;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button.primary {
+  background-color: $red;
+  color: #fff;
+}
+.button.primary-outline {
+  background-color: transparent;
+  color: #fff;
+}
+
+.ham {
+  height: 18px;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    border-radius: 10px;
+  }
+  .bar:nth-child(2) {
+    width: 80%;
+    margin-left: auto;
+  }
+}
+
+.cross {
+  height: 25px;
+  width: 25px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  .bar {
+    width: 100%;
+    transform-origin: center;
+    height: 2px;
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    border-radius: 10px;
+  }
+  .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(1px);
+  }
+  .bar:nth-child(2) {
+    transform: rotate(-45deg) translateY(-1px);
+  }
+}
+
+// helpers
+
+@media only screen and (max-width: 1200px) {
+  .search-box {
+    background-color: transparent;
+    width: auto;
+    input {
+      display: none;
+    }
+  }
+  .landing {
+    h1 {
+      font-size: 32px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing {
+    p {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+  }
+  nav {
+    padding: 1.5rem 7%;
+    .brand-with-search {
+      justify-content: space-between;
+      .search-box {
+        margin-left: auto;
+      }
+    }
+    .overloay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba($color: #555, $alpha: 0.6);
+    }
+    .links {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background-color: $red;
+      padding: 70px 20px;
+      padding-top: 40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      z-index: 1;
+      a {
+        font-size: 1rem;
+        margin: 0.6rem 0;
+        color: #fff !important;
+        font-weight: 700;
+      }
+    }
+  }
+}
