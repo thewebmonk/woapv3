@@ -1,9 +1,8 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
-import { fadeIn, fadeOut } from 'react-animations';
 import Search from '../common/Search';
-import styled, { keyframes, css } from 'styled-components';
 import { useTransition, animated } from 'react-spring';
+import woaplogo from '../../assets/images/woap_logo.png';
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,23 +17,12 @@ const Nav = () => {
     leave: { y: 100, opacity: 0 },
     delay: 200
   });
-  // const fadeinAnimation = keyframes`${fadeIn}`;
-  // const fadeOutAnimation = keyframes`${fadeOut}`;
-  // const fadein = css`
-  //   animation: 1s ${fadeinAnimation};
-  // `;
-  // const fadeout = css`
-  //   animation: 1s ${fadeOutAnimation};
-  // `;
-  // const FadeInDiv = styled.div`
-  //   ${(props) => (props.show ? fadeout : fadein)};
-  // `;
 
   return (
     <nav>
       <div className="brand-with-search">
         <div className="brand">
-          <img src="/images/woap_logo.png" />
+          <img src={woaplogo} />
         </div>
         <div className="actions">
           <Search />
