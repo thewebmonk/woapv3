@@ -4,17 +4,13 @@ import Landing from '../components/landing';
 import { Helmet } from 'react-helmet';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/scss/app.scss';
+import SEO from '../components/common/Seo';
 
 // markup
 const IndexPage = () => {
   return (
     <>
-      <Helmet>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-        />
-      </Helmet>
+      <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
       <NavBar />
       <Landing />
     </>
