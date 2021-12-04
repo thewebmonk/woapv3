@@ -16,7 +16,7 @@ const IndexPage = () => {
         <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
         <NavBar />
         <Landing />
-        <div className="container mt-5 pt-3">
+        <div className="container mt-5 pt-0 pt-md-3">
           <h4 className="text-center mt-5 pt-5 fs-6 text-white-50">
             Read Blogs
           </h4>

@@ -146,7 +146,7 @@ nav {
 
 .blog-card {
   background-color: #1e2333;
-  padding: 30px;
+  padding: 25px 30px;
   border-radius: 8px;
   max-width: 700px;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -154,6 +154,7 @@ nav {
     color: rgba($color: #fff, $alpha: 0.8);
     line-height: 1.8rem;
     font-size: 1.2rem;
+    font-weight: 600;
   }
   span {
     font-size: 0.8rem;
