@@ -6,7 +6,6 @@ import { config } from '../../constants/particles';
 const Landing = () => {
   return (
     <div className="landing container">
-      <Particles id="tsparticles" options={config} />
       <p className="text-center">
         HI, I’m Ashish Patel, a Full stack web developer
       </p>

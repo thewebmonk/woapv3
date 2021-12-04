@@ -1,8 +1,8 @@
-import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import Search from '../common/Search';
 import { useTransition, animated } from 'react-spring';
 import woaplogo from '../../assets/images/woap_logo.png';
+import Links from './components/Links';
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -42,10 +42,7 @@ const Nav = () => {
         ) : null
       )}
       <div className="links d-none d-md-flex">
-        <Link>Portfolio</Link>
-        <Link>Blogs</Link>
-        <Link>Resume</Link>
-        <Link>Contact</Link>
+        <Links />
       </div>
       {transition2((style, item) =>
         item ? (
@@ -66,10 +63,7 @@ const Nav = () => {
               <div className="bar" />
               <div className="bar" />
             </div>
-            <Link>Portfolio</Link>
-            <Link>Blogs</Link>
-            <Link>Resume</Link>
-            <Link>Contact</Link>
+            <Links />
           </animated.div>
         ) : null
       )}
