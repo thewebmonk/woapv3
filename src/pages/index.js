@@ -18,9 +18,9 @@ const IndexPage = () => {
         <Landing />
         <div className="container mt-5 pt-0 pt-md-3">
           <h4 className="text-center mt-5 pt-5 fs-6 text-white-50">
-            Read Blogs
+            Recent Blogs
           </h4>
-          <div className="row m-0 p-0 mt-3  mb-4">
+          <div className="row m-0 p-0 mt-2  mb-4">
             <div className="col-md-4 mt-3">
               <BlogCard />
             </div>
