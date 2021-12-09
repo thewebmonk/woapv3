@@ -8,6 +8,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-readingtime-contentful',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-prettier-eslint',
       options: {
