@@ -12,7 +12,7 @@ import Footer from '../components/Footer';
 const IndexPage = () => {
   return (
     <>
-      <div className="min-vh-100 d-fl">
+      <div className="min-vh-100 ">
         <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
         <NavBar />
         <Landing />
@@ -22,13 +22,29 @@ const IndexPage = () => {
           </h4>
           <div className="row m-0 p-0 mt-2  mb-4">
             <div className="col-md-4 mt-3">
-              <BlogCard />
+              <BlogCard
+                title={
+                  'Want to learn PHP ? Best resources to learn PHP programming language.'
+                }
+                link="/blog/want-to-learn-php-best-resources-to-learn-php-programming-language"
+                date="8 Dec, 2021"
+              />
             </div>
             <div className="col-md-4 mt-3">
-              <BlogCard />
+              <BlogCard
+                title={'My programming journey from LOGO to LARAVEL.'}
+                link="/blog/my-programming-journey-from-logo-to-laravel"
+                date="8 Dec, 2021"
+              />
             </div>
             <div className="col-md-4 mt-3">
-              <BlogCard />
+              <BlogCard
+                title={
+                  'Want to learn PHP ? Best resources to learn PHP programming language.'
+                }
+                link="/blog/want-to-learn-php-best-resources-to-learn-php-programming-language"
+                date="8 Dec, 2021"
+              />
             </div>
           </div>
         </div>

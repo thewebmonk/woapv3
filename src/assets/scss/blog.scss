@@ -1,0 +1,49 @@
+@import './variable.scss';
+.meta {
+  .author-details {
+    .avatar {
+      height: 60px;
+      width: 60px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+article {
+  color: #fff;
+  line-height: 1.9rem;
+  p {
+    opacity: 0.7;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-weight: 200;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 45px 0 30px 0;
+    opacity: 0.8;
+    font-weight: 600;
+  }
+  a {
+    color: $red2;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .meta {
+    .author-details {
+      .avatar {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}

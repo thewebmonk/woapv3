@@ -3,6 +3,7 @@ import Search from '../common/Search';
 import { useTransition, animated } from 'react-spring';
 import woaplogo from '../../assets/images/woap_logo.png';
 import Links from './components/Links';
+import { Link } from 'gatsby';
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,7 +23,9 @@ const Nav = () => {
     <nav>
       <div className="brand-with-search">
         <div className="brand">
-          <img src={woaplogo} />
+          <Link to="/">
+            <img src={woaplogo} />
+          </Link>
         </div>
         <div className="actions">
           <Search />

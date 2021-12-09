@@ -1,11 +1,14 @@
+import { Link } from 'gatsby';
 import React from 'react';
 
-const BlogCard = () => {
+const BlogCard = ({ title, date, link }) => {
   return (
-    <div className="blog-card">
-      <h5>Freelacing in india, things to know before you start.</h5>
-      <span className="text-white-50 ">25 Aug 2021</span>
-    </div>
+    <Link to={link}>
+      <div className="blog-card">
+        <h5>{title}</h5>
+        <span className="text-white-50 ">{date}</span>
+      </div>
+    </Link>
   );
 };
 export default BlogCard;
