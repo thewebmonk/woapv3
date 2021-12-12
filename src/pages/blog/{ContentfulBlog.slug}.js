@@ -12,14 +12,36 @@ const Blog = ({ data }) => {
   const blog = data.allContentfulBlog.nodes[0];
   const body = JSON.parse(blog.body.raw);
   const date = moment(blog.updatedAt).format('D MMM, YYYY');
-  console.log(blog);
+  const getAssets = (id) => {
+    const assets = blog?.body?.references;
+    console.log(assets);
+    if (assets) {
+      const asset = assets.filter((asset) => asset.contentful_id === id)[0];
+      if (asset) {
+        return asset;
+      }
+      return null;
+    }
+    return null;
+  };
+  const options = {
+    renderNode: {
+      'embedded-asset-block': (node, children) => {
+        const asset = getAssets(node.data.target.sys.id);
+        if (asset) {
+          return <img src={asset.file.url} alt="Blog Embed Image" />;
+        }
+        return null;
+      }
+    }
+  };
   return (
     <>
       <SEO title={blog.title} />
       <NavBar />
-      <div className="container">
+      <div className="container container-blog">
         <div className="row  mt-2 mt-md-5 m-0">
-          <div className="col-lg-12 p-0">
+          <div className="col-lg-9 p-0">
             <span className="text-white-50 fs-md-4">{date}</span>
             <h1 className="text-white fw-bolder mt-3">{blog.title}</h1>
             <div className="meta mt-4 pt-3 pt-md-4 d-flex justify-content-between align-items-center">
@@ -32,7 +54,7 @@ const Blog = ({ data }) => {
               <span className="text-white-50">10 Min Read</span>
             </div>
             <article className="mt-4 pt-3">
-              {documentToReactComponents(body)}
+              {documentToReactComponents(body, options)}
             </article>
           </div>
         </div>
@@ -52,6 +74,15 @@ export const assetQuery = graphql`
         id
         body {
           raw
+          references {
+            ... on ContentfulAsset {
+              contentful_id
+              __typename
+              file {
+                url
+              }
+            }
+          }
         }
         createdAt
         updatedAt

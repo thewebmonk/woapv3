@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-readingtime-contentful',
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
+    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: 'gatsby-plugin-prettier-eslint',
       options: {
@@ -37,6 +38,7 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `h222dkuxomv6`,
+        include: 10,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: '5tCPCW3kbzS-DY4GITbJ2DrZJ3GM8SrtQ3iGLHo2AJ4'
       }

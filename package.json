@@ -16,6 +16,8 @@
     "lint": "eslint ./src --ext .js"
   },
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@contentful/rich-text-html-renderer": "^15.9.1",
     "@contentful/rich-text-react-renderer": "^15.6.2",
     "bootstrap": "5",
     "gatsby": "^3.13.1",
