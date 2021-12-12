@@ -4,10 +4,10 @@ import React from 'react';
 const Links = () => {
   return (
     <>
-      <Link>Portfolio</Link>
-      <Link>Blogs</Link>
-      <Link>Resume</Link>
-      <Link>Contact</Link>
+      <Link to="/portfolio">Portfolio</Link>
+      <Link to="/blogs">Blogs</Link>
+      <Link to="/portfolio">Resume</Link>
+      <Link to="/portfolio">Contact</Link>
     </>
   );
 };

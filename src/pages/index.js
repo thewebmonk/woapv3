@@ -7,9 +7,12 @@ import '../assets/scss/app.scss';
 import SEO from '../components/common/Seo';
 import BlogCard from '../components/BlogCard';
 import Footer from '../components/Footer';
+import { graphql } from 'gatsby';
+import { humanizeTimeStamp } from '../utils';
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const blogs = data.allContentfulBlog.nodes;
   return (
     <>
       <div className="min-vh-100 ">
@@ -21,31 +24,15 @@ const IndexPage = () => {
             Recent Blogs
           </h4>
           <div className="row m-0 p-0 mt-2  mb-4">
-            <div className="col-md-4 mt-3">
-              <BlogCard
-                title={
-                  'Want to learn PHP ? Best resources to learn PHP programming language.'
-                }
-                link="/blog/want-to-learn-php-best-resources-to-learn-php-programming-language"
-                date="8 Dec, 2021"
-              />
-            </div>
-            <div className="col-md-4 mt-3">
-              <BlogCard
-                title={'My programming journey from LOGO to LARAVEL.'}
-                link="/blog/my-programming-journey-from-logo-to-laravel"
-                date="8 Dec, 2021"
-              />
-            </div>
-            <div className="col-md-4 mt-3">
-              <BlogCard
-                title={
-                  'Want to learn PHP ? Best resources to learn PHP programming language.'
-                }
-                link="/blog/want-to-learn-php-best-resources-to-learn-php-programming-language"
-                date="8 Dec, 2021"
-              />
-            </div>
+            {blogs.map((blog) => (
+              <div className="col-md-4 mt-3">
+                <BlogCard
+                  title={blog.title}
+                  link={`/blog/${blog.slug}/`}
+                  date={`${humanizeTimeStamp(blog.updatedAt)}`}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -55,3 +42,15 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const assetQuery = graphql`
+  query GetThreeBlogs {
+    allContentfulBlog(limit: 3) {
+      nodes {
+        slug
+        title
+        updatedAt
+      }
+    }
+  }
+`;

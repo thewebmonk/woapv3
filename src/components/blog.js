@@ -1,20 +1,20 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import moment from 'moment';
-import SEO from '../../components/common/Seo';
-import NavBar from '../../components/nav';
-import '../../assets/scss/blog.scss';
-import Ash from '../../assets/images/ash.jpg';
-import Footer from '../../components/Footer';
+import SEO from './common/Seo';
+import NavBar from './nav';
+import '../assets/scss/blog.scss';
+import Ash from '../assets/images/ash.jpg';
+import Footer from './Footer';
+import { humanizeTimeStamp } from '../utils';
 
-const Blog = ({ data }) => {
-  const blog = data.allContentfulBlog.nodes[0];
+const Blog = ({ pageContext }) => {
+  const blog = pageContext.data;
+  console.log(blog);
   const body = JSON.parse(blog.body.raw);
-  const date = moment(blog.updatedAt).format('D MMM, YYYY');
+  const date = humanizeTimeStamp(blog.updatedAt);
   const getAssets = (id) => {
     const assets = blog?.body?.references;
-    console.log(assets);
     if (assets) {
       const asset = assets.filter((asset) => asset.contentful_id === id)[0];
       if (asset) {
@@ -66,33 +66,33 @@ const Blog = ({ data }) => {
 
 export default Blog;
 
-export const assetQuery = graphql`
-  query MyQuery($slug: String) {
-    allContentfulBlog(filter: { slug: { eq: $slug } }) {
-      nodes {
-        slug
-        id
-        body {
-          raw
-          references {
-            ... on ContentfulAsset {
-              contentful_id
-              __typename
-              file {
-                url
-              }
-            }
-          }
-        }
-        createdAt
-        updatedAt
-        thumb {
-          file {
-            url
-          }
-        }
-        title
-      }
-    }
-  }
-`;
+// export const assetQuery = graphql`
+//   query MyQuery($slug: String) {
+//     allContentfulBlog(filter: { slug: { eq: $slug } }) {
+//       nodes {
+//         slug
+//         id
+//         body {
+//           raw
+//           references {
+//             ... on ContentfulAsset {
+//               contentful_id
+//               __typename
+//               file {
+//                 url
+//               }
+//             }
+//           }
+//         }
+//         createdAt
+//         updatedAt
+//         thumb {
+//           file {
+//             url
+//           }
+//         }
+//         title
+//       }
+//     }
+//   }
+// `;
