@@ -6,7 +6,7 @@ import { config } from '../../constants/particles';
 const Landing = () => {
   return (
     <div className="landing container">
-      <p className="text-center">
+      <p className="text-center mt-0 mt-md-4">
         HI, I’m Ashish Patel, a Full stack web developer
       </p>
       <h1>

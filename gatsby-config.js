@@ -10,7 +10,6 @@ module.exports = {
     'gatsby-plugin-readingtime-contentful',
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
-    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: 'gatsby-plugin-prettier-eslint',
       options: {

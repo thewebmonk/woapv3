@@ -19,8 +19,8 @@ const IndexPage = ({ data }) => {
         <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
         <NavBar />
         <Landing />
-        <div className="container mt-5 pt-0 pt-md-3">
-          <h4 className="text-center mt-5 pt-5 fs-6 text-white-50">
+        <div className="container mt-4 mt-md-5 pt-0 pt-md-5">
+          <h4 className="text-center mt-0 mt-md-5 fs-6 text-white-50">
             Recent Blogs
           </h4>
           <div className="row m-0 p-0 mt-2  mb-4">
@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
                 <BlogCard
                   title={blog.title}
                   link={`/blog/${blog.slug}/`}
-                  date={`${humanizeTimeStamp(blog.updatedAt)}`}
+                  date={humanizeTimeStamp(blog.createdAt)}
                 />
               </div>
             ))}
@@ -45,11 +45,12 @@ export default IndexPage;
 
 export const assetQuery = graphql`
   query GetThreeBlogs {
-    allContentfulBlog(limit: 3) {
+    allContentfulBlog {
       nodes {
         slug
         title
         updatedAt
+        createdAt
       }
     }
   }

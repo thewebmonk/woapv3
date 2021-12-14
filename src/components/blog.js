@@ -1,16 +1,20 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import SEO from './common/Seo';
 import NavBar from './nav';
-import '../assets/scss/blog.scss';
 import Ash from '../assets/images/ash.jpg';
 import Footer from './Footer';
 import { humanizeTimeStamp } from '../utils';
+import PrismCode from 'react-prism';
+import 'prismjs';
+import 'prismjs/components/prism-jsx.min';
+import 'prismjs/themes/prism-tomorrow.css';
+import '../assets/scss/blog.scss';
 
 const Blog = ({ pageContext }) => {
   const blog = pageContext.data;
-  console.log(blog);
+  // console.log(blog.body.raw);
   const body = JSON.parse(blog.body.raw);
   const date = humanizeTimeStamp(blog.updatedAt);
   const getAssets = (id) => {
@@ -26,12 +30,21 @@ const Blog = ({ pageContext }) => {
   };
   const options = {
     renderNode: {
-      'embedded-asset-block': (node, children) => {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const asset = getAssets(node.data.target.sys.id);
+        console.log(asset);
         if (asset) {
           return <img src={asset.file.url} alt="Blog Embed Image" />;
         }
         return null;
+      },
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        const asset = getAssets(node.data.target.sys.id);
+        return (
+          <pre>
+            <PrismCode className="language-js">{asset.code.code}</PrismCode>
+          </pre>
+        );
       }
     }
   };

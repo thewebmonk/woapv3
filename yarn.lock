@@ -1073,13 +1073,6 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.2.0":
-  version "7.16.3"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
-  integrity sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/standalone@^7.15.5":
   version "7.15.8"
   resolved "https://registry.npmjs.org/@babel/standalone/-/standalone-7.15.8.tgz"
@@ -1149,39 +1142,6 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@contentful/gatsby-transformer-contentful-richtext@^13.1.0":
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/@contentful/gatsby-transformer-contentful-richtext/-/gatsby-transformer-contentful-richtext-13.1.0.tgz#fd0e106e9cf17da1db6202b656d27ebfb6bfd756"
-  integrity sha512-rH79hgQf17o+TrV7SNtcg+XNlmacxdDbND0ZhmHRkwL2F8YAjFBJdgyc6aBavrHQhs+MzUewJlqLqQW+HhEjNQ==
-  dependencies:
-    "@babel/runtime" "^7.2.0"
-    "@contentful/rich-text-html-renderer" "^13.1.0"
-    "@contentful/rich-text-plain-text-renderer" "^13.1.0"
-    lodash.words "^4.2.0"
-
-"@contentful/rich-text-html-renderer@^13.1.0":
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-html-renderer/-/rich-text-html-renderer-13.4.0.tgz#03c08f4196a9eb9bae9af993b5644624fe256fa9"
-  integrity sha512-g5maEnoGlhMOA/FcF8UTE6V3BHDx8ygfjF5AZKEFcpi+cDL5SfCKvV9FkaasNashrttECy9ncjRsIHPlAmKONg==
-  dependencies:
-    "@contentful/rich-text-types" "^13.4.0"
-    escape-html "^1.0.3"
-
-"@contentful/rich-text-html-renderer@^15.9.1":
-  version "15.9.1"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-html-renderer/-/rich-text-html-renderer-15.9.1.tgz#3ccd783fb8363be4fc4644c4a47346dfd29c7fe6"
-  integrity sha512-RiVVQKGLCts8bitIHJ7QnhxzljkvJj8nkLO14lZkcfQv+rI+AVclvk9YV0zCxuvTPy3tGop/ZiAqFH6oteBoPQ==
-  dependencies:
-    "@contentful/rich-text-types" "^15.9.1"
-    escape-html "^1.0.3"
-
-"@contentful/rich-text-plain-text-renderer@^13.1.0":
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-plain-text-renderer/-/rich-text-plain-text-renderer-13.4.0.tgz#3da5f84d5b5d4f02f30849c0c5f9b9dd55eaaebd"
-  integrity sha512-kUs0oYLupHB3y3/a4iTd3WR+u7iGmkeoHU2nr5tSsqX9WMzM9FHp2v9PI6EN6FsfITWbnYgMW19vJ1bBv0T6BQ==
-  dependencies:
-    "@contentful/rich-text-types" "^13.4.0"
-
 "@contentful/rich-text-plain-text-renderer@^14.1.1":
   version "14.1.2"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-plain-text-renderer/-/rich-text-plain-text-renderer-14.1.2.tgz#5a275d97951b54be1e1279348857c2f4cf90aa62"
@@ -1202,11 +1162,6 @@
   integrity sha512-kT7YKGr8Igi65aEnz9XWqEZiUHfGHKRClCyQNs6gYYJwwzUmKW6y53UqKvCxJOFWsv794Irsx6ijvo0R7NDfcg==
   dependencies:
     "@contentful/rich-text-types" "^15.6.2"
-
-"@contentful/rich-text-types@^13.4.0":
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-13.4.0.tgz#a59c311ebd1b801ee00edbc08663c8d78da26171"
-  integrity sha512-YPdYqGmWiGAood7ri2BUXfPQKNthkQYV1rmQdaq4UAxWK5NLB5NXckaUYLbohqhHKtrq4tnfzVn+ePWID7Dzbg==
 
 "@contentful/rich-text-types@^14.1.2":
   version "14.1.2"
@@ -4739,7 +4694,7 @@ escape-goat@^2.0.0:
   resolved "https://registry.npmjs.org/escape-goat/-/escape-goat-2.1.1.tgz"
   integrity sha512-8/uIhbG12Csjy2JEW7D9pHbreaVaS/OpN3ycnyvElTdwM5n6GY6W6e2IPemfvGZeUMqZ9A/3GqIZMgKnBhAw/Q==
 
-escape-html@^1.0.3, escape-html@~1.0.3:
+escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
@@ -7624,11 +7579,6 @@ lodash.without@^4.4.0:
   resolved "https://registry.npmjs.org/lodash.without/-/lodash.without-4.4.0.tgz"
   integrity sha1-PNRXSgC2e643OpS3SHcmQFB7eqw=
 
-lodash.words@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.words/-/lodash.words-4.2.0.tgz#5ecfeaf8ecf8acaa8e0c8386295f1993c9cf4036"
-  integrity sha1-Xs/q+Oz4rKqODIOGKV8Zk8nPQDY=
-
 lodash@4.17.21, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
@@ -9460,6 +9410,11 @@ pretty-format@^25.5.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
+prismjs@^1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
+  integrity sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==
+
 probe-image-size@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-6.0.0.tgz#4a85b19d5af4e29a8de7d53a9aa036f6fd02f5f4"
@@ -9730,6 +9685,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-prism@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/react-prism/-/react-prism-4.3.2.tgz#5c07609539b3ba6f45eb33e7d6a3588df3270c21"
+  integrity sha512-Z8BzDfWxzhngDtnZFjYj4RgHo7uqiWB4cOCpp//GFEpWbtINbCqHLIpL+q/f8ah5Aokw/uXkBkoLgvYIGgtm4A==
 
 react-refresh@^0.9.0:
   version "0.9.0"
