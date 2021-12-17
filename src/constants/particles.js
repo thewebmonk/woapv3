@@ -19,7 +19,7 @@ export const config = {
     },
     modes: {
       bubble: {
-        distance: 400,
+        distance: 900,
         duration: 2,
         opacity: 0.8,
         size: 40
@@ -39,7 +39,7 @@ export const config = {
     },
     links: {
       color: '#ffffff',
-      distance: 150,
+      distance: 200,
       enable: true,
       opacity: 0.1,
       width: 1
@@ -58,7 +58,7 @@ export const config = {
     number: {
       density: {
         enable: true,
-        value_area: 1000
+        value_area: 1800
       },
       value: 80
     },

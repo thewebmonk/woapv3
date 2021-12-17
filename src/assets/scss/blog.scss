@@ -3,6 +3,39 @@
 
 .container-blog {
   padding: 0 !important;
+  // overflow-x: hidden;
+}
+.blog-header {
+  position: relative;
+  .blog-thumb {
+    position: absolute;
+    top: -30%;
+    bottom: -90%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: -35%;
+    bottom: -100%;
+    right: -10px;
+    left: -10px;
+    z-index: -1;
+    background-image: radial-gradient(
+      rgba($blue, 0.7),
+      rgba($blue, 0.8),
+      rgba($blue, 0.9),
+      rgba($blue, 0.97),
+      $blue,
+      $blue
+    );
+  }
 }
 .meta {
   .author-details {
@@ -23,7 +56,7 @@ article {
   line-height: 1.9rem;
   font-family: 'Inter', sans-serif;
   p {
-    opacity: 0.8;
+    opacity: 0.7;
     font-size: 1.1rem;
     line-height: 2rem;
     font-weight: 300;
@@ -54,6 +87,15 @@ article {
       font-weight: 800 !important;
       font-family: 'Source Code Pro', monospace !important;
     }
+  }
+}
+hr {
+  background-color: rgba($color: #fff, $alpha: 1) !important;
+}
+.suggested-blogs:hover {
+  p {
+    transition: 0.2s;
+    color: rgba($color: #fff, $alpha: 0.9) !important;
   }
 }
 

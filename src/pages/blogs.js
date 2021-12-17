@@ -18,7 +18,6 @@ const IndexPage = ({ data }) => {
       <div className="min-vh-100 ">
         <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
         <NavBar />
-        <Landing />
         <div className="container mt-4 mt-md-5 pt-0 pt-md-5">
           <h4 className="text-center mt-0 mt-md-5 fs-6 text-white-50">
             Recent Blogs
@@ -44,7 +43,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const assetQuery = graphql`
-  query GetThreeBlogs {
+  query GetAllBlogs {
     allContentfulBlog {
       nodes {
         slug
