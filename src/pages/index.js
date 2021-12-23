@@ -1,14 +1,13 @@
 import * as React from 'react';
 import NavBar from '../components/nav';
 import Landing from '../components/landing';
-import { Helmet } from 'react-helmet';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/scss/app.scss';
 import SEO from '../components/common/Seo';
 import BlogCard from '../components/Blog/BlogCard';
 import Footer from '../components/Footer';
 import { graphql } from 'gatsby';
 import { humanizeTimeStamp } from '../utils';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../assets/scss/app.scss';
 
 // markup
 const IndexPage = ({ data }) => {
@@ -28,8 +27,9 @@ const IndexPage = ({ data }) => {
               <div className="col-md-4 mt-3">
                 <BlogCard
                   title={blog.title}
-                  link={`/blog/${blog.slug}/`}
-                  date={humanizeTimeStamp(blog.createdAt)}
+                  link={`/blog/${blog.slug}`}
+                  date={humanizeTimeStamp(blog.createdAtOld || blog.createdAt)}
+                  image={blog.thumb.file.url}
                 />
               </div>
             ))}
@@ -45,11 +45,17 @@ export default IndexPage;
 
 export const assetQuery = graphql`
   query GetThreeBlogs {
-    allContentfulBlog {
+    allContentfulBlog(sort: { fields: updatedAt, order: DESC }, limit: 3) {
       nodes {
         slug
-        title
         updatedAt
+        title
+        thumb {
+          file {
+            url
+          }
+        }
+        createdAtOld
         createdAt
       }
     }

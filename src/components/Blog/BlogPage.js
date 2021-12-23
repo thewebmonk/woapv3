@@ -1,6 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import SEO from '../common/Seo';
 import NavBar from '../nav';
 import Ash from '../../assets/images/ash.jpg';
@@ -15,10 +15,9 @@ import SuggestedBlogs from './SuggestedBlogs';
 import { graphql } from 'gatsby';
 
 const BlogPage = ({ pageContext, data }) => {
-  console.log(pageContext.data);
   const blog = pageContext.data;
   const body = JSON.parse(blog.body.raw);
-  const date = humanizeTimeStamp(blog.updatedAt);
+  const date = humanizeTimeStamp(blog.createdAtOld || blog.updatedAt);
   const getAssets = (id) => {
     const assets = blog?.body?.references;
     if (assets) {
@@ -34,7 +33,6 @@ const BlogPage = ({ pageContext, data }) => {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const asset = getAssets(node.data.target.sys.id);
-        console.log(asset);
         if (asset) {
           return <img src={asset.file.url} alt="Blog Embed Image" />;
         }
@@ -46,6 +44,14 @@ const BlogPage = ({ pageContext, data }) => {
           <pre>
             <PrismCode className="language-js">{asset.code.code}</PrismCode>
           </pre>
+        );
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        const { data, content } = node;
+        return (
+          <a href={data.uri} target={'_blank'} rel="noreferrer">
+            {content[0].value}
+          </a>
         );
       }
     }
@@ -87,29 +93,12 @@ const BlogPage = ({ pageContext, data }) => {
           </div>
 
           <div className="col-lg-4 p-0 ps-0 ps-md-5 text-white d-flex flex-column justify-content-between">
-            <div>
-              <script
-                async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1670731865476965"
-                crossOrigin="anonymous"
-              ></script>
-
-              <ins
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client="ca-pub-1670731865476965"
-                data-ad-slot="9020466163"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              ></ins>
-              <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-            </div>
+            <div></div>
             <div className="position-sticky  bottom-0 pb-3">
               <h5 className="mb-3">Recent Blogs</h5>
-              {data.allContentfulBlog.nodes.map((blog) => (
+              {data.allContentfulBlog.nodes.map((blog, index) => (
                 <SuggestedBlogs
+                  key={index}
                   {...{ ...blog, className: 'suggested-blogs' }}
                 />
               ))}
@@ -126,10 +115,9 @@ export default BlogPage;
 
 export const assetQuery = graphql`
   query GetSuggestedBlogs {
-    allContentfulBlog {
+    allContentfulBlog(sort: { fields: createdAt, order: DESC }, limit: 3) {
       nodes {
         slug
-        updatedAt
         title
       }
     }

@@ -36,11 +36,14 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `h222dkuxomv6`,
+        spaceId: process.env.CTF_SPACE_ID,
         include: 10,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: '5tCPCW3kbzS-DY4GITbJ2DrZJ3GM8SrtQ3iGLHo2AJ4'
+        accessToken: process.env.CTF_CDA_TOKEN
       }
     }
   ]
 };
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});

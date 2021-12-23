@@ -92,10 +92,28 @@ article {
 hr {
   background-color: rgba($color: #fff, $alpha: 1) !important;
 }
+.suggested-blogs {
+  p {
+    position: relative;
+  }
+  p::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    transition: 0.2s;
+  }
+}
 .suggested-blogs:hover {
   p {
+    padding-left: 10px;
     transition: 0.2s;
     color: rgba($color: #fff, $alpha: 0.9) !important;
+  }
+  p::before {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
   }
 }
 

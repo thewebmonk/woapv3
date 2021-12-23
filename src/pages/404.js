@@ -1,54 +1,27 @@
-import * as React from "react"
-import { Link } from "gatsby"
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from 'react';
+import NavBar from '../components/nav';
+import Footer from '../components/Footer';
+import { Link } from 'gatsby';
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <>
+      <div className="min-vh-100 ">
+        <NavBar />
+        <div className="d-flex h-100 mt-5 pt-5 flex-column justify-content-between align-content-center">
+          <h3 className="text-white text-center">404: Page Not Found</h3>
+          <p className="text-center text-white-50">
+            Sorry, the page you're trying to access does not exist.
+          </p>
+          <Link to="/" className="m-auto button primary ">
+            Continue
+          </Link>
+        </div>
+      </div>
+      <Footer style={{ marginTop: '0' }} />
+    </>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
