@@ -1,6 +1,6 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import SEO from '../common/Seo';
 import NavBar from '../nav';
 import Ash from '../../assets/images/ash.jpg';
@@ -13,9 +13,11 @@ import 'prismjs/themes/prism-tomorrow.css';
 import '../../assets/scss/blog.scss';
 import SuggestedBlogs from './SuggestedBlogs';
 import { graphql } from 'gatsby';
+import { BLOG_URL, PROJECT_URL } from '../../constants';
 
 const BlogPage = ({ pageContext, data }) => {
   const blog = pageContext.data;
+  const isProject = pageContext.isProject;
   const body = JSON.parse(blog.body.raw);
   const date = humanizeTimeStamp(blog.createdAtOld || blog.updatedAt);
   const getAssets = (id) => {
@@ -61,8 +63,8 @@ const BlogPage = ({ pageContext, data }) => {
       <SEO
         {...{
           ...blog.seo,
-          article: true,
-          image: ctfAssetUrl(blog.thumb.file.url)
+          image: ctfAssetUrl(blog.thumb.file.url),
+          url: (isProject ? PROJECT_URL : BLOG_URL) + blog.slug
         }}
       />
       <NavBar />

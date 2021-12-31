@@ -8,6 +8,7 @@ import { graphql } from 'gatsby';
 import { humanizeTimeStamp } from '../utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/scss/app.scss';
+import { SITE_URL } from '../constants';
 
 // markup
 const IndexPage = ({ data }) => {
@@ -15,7 +16,13 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <div className="min-vh-100 ">
-        <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
+        <SEO
+          title="Ashish Patel: Full stack web developer | Headleass CMSs | React | JamStack | Express | Vue.js "
+          description="I'm a passionate full stack web developer, a website is not just about technologies its more about business. So I just not build amazing website but a great business as well. My teck stack revolves around JavaScript including react, vue, nodejs, MERN and JAMstack."
+          keywords="javascript, react, vuejs, developer, software engineer, nodejs, express, website, web developer, user interface, ui ux, blogs, articles, portfolio, jamshedpur, india"
+          url={SITE_URL}
+          image=""
+        />
         <NavBar />
         <Landing />
         <div className="container mt-4 mt-md-5 pt-0 pt-md-5">

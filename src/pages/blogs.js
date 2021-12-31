@@ -7,6 +7,7 @@ import BlogCard from '../components/Blog/BlogCard';
 import Footer from '../components/Footer';
 import { graphql } from 'gatsby';
 import { humanizeTimeStamp } from '../utils';
+import { BLOGS_URL } from '../constants';
 
 // markup
 const IndexPage = ({ data }) => {
@@ -14,7 +15,13 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <div className="min-vh-100 ">
-        <SEO title="Ashish Patel : Web Development in Jamshedpur, India working as a freelacer. " />
+        <SEO
+          title="Blogs | Ashish Patel: Full stack web developer | Headleass CMSs | React | JamStack | Express | Vue.js "
+          description="I'm a passionate full stack web developer, a website is not just about technologies its more about business. So I just not build amazing website but a great business as well. My teck stack revolves around JavaScript including react, vue, nodejs, MERN and JAMstack."
+          keywords="javascript, react, vuejs, developer, software engineer, nodejs, express, website, web developer, user interface, ui ux, blogs, articles, portfolio, jamshedpur, india"
+          url={BLOGS_URL}
+          image=""
+        />
         <NavBar />
         <div className="container mt-md-2 pt-0 pt-md-5">
           <h1 className="text-white display-1 fw-bolder text-center mb-4">
