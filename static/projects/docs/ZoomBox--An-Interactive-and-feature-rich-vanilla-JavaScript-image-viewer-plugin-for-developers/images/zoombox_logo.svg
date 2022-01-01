@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="683" height="175.481" viewBox="0 0 683 175.481">
+  <g id="Group_11" data-name="Group 11" transform="translate(-305 -299)">
+    <text id="Z_mBox" data-name="Z      mBox" transform="translate(305 431)" fill="#444" font-size="140" font-family="ArialRoundedMTBold, Arial Rounded MT"><tspan x="0" y="0" xml:space="preserve">Z      mBox</tspan></text>
+    <g id="Group_5" data-name="Group 5" transform="translate(405.918 329.251) rotate(13)">
+      <g id="Group_3" data-name="Group 3" transform="translate(36.051 42.061) rotate(-13)">
+        <line id="Line_1" data-name="Line 1" y2="26.876" transform="translate(26.876 13.438) rotate(90)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="7"/>
+        <line id="Line_2" data-name="Line 2" y2="26.876" transform="translate(13.438 0)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="7"/>
+      </g>
+      <g id="Group_10" data-name="Group 10" transform="translate(0 0)" style="isolation: isolate">
+        <path id="Rectangle_3" data-name="Rectangle 3" d="M0,0H63.054a9.3,9.3,0,0,1,9.3,9.3v0a9.3,9.3,0,0,1-9.3,9.3H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(82.013 60.955) rotate(37)" fill="#5e9eff"/>
+        <g id="Group_4" data-name="Group 4" transform="translate(0 0)">
+          <path id="Union_3" data-name="Union 3" d="M42.236,85.03A41.966,41.966,0,0,1,12.371,72.577a42.661,42.661,0,0,1,0-60.125,42.264,42.264,0,0,1,72.1,30.062,42.525,42.525,0,0,1-25.8,39.174A41.734,41.734,0,0,1,42.236,85.03Zm0-68.884a26.37,26.37,0,1,0,26.2,26.37A26.313,26.313,0,0,0,42.236,16.145Z" transform="matrix(0.966, 0.259, -0.259, 0.966, 22.007, 0)" fill="#5e9eff" style="mix-blend-mode: darken;isolation: isolate"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_6" data-name="Group 6" transform="translate(508.37 329.251) rotate(13)" style="isolation: isolate">
+      <g id="Group_3-2" data-name="Group 3" transform="translate(39.074 55.154) rotate(-13)">
+        <line id="Line_1-2" data-name="Line 1" y2="26.876" transform="translate(26.876 0) rotate(90)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="7"/>
+      </g>
+      <g id="Group_9" data-name="Group 9" transform="translate(0 0)">
+        <path id="Rectangle_3-2" data-name="Rectangle 3" d="M0,0H63.054a9.3,9.3,0,0,1,9.3,9.3v0a9.3,9.3,0,0,1-9.3,9.3H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(82.013 60.955) rotate(37)" fill="#5e9eff"/>
+        <g id="Group_4-2" data-name="Group 4" transform="translate(0 0)">
+          <path id="Union_3-2" data-name="Union 3" d="M42.236,85.03A41.966,41.966,0,0,1,12.371,72.577a42.661,42.661,0,0,1,0-60.125,42.264,42.264,0,0,1,72.1,30.062,42.525,42.525,0,0,1-25.8,39.174A41.734,41.734,0,0,1,42.236,85.03Zm0-68.884a26.37,26.37,0,1,0,26.2,26.37A26.313,26.313,0,0,0,42.236,16.145Z" transform="matrix(0.966, 0.259, -0.259, 0.966, 22.007, 0)" fill="#5e9eff" style="mix-blend-mode: darken;isolation: isolate"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

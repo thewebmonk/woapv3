@@ -8,6 +8,12 @@ const SEO = ({ title, description, image, keywords, url }) => {
     <Helmet title={title}>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={'Worlds of Ashish Patel'} />
       <meta name="author" content="Ashish Patel" />
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -25,14 +31,6 @@ const SEO = ({ title, description, image, keywords, url }) => {
       <meta name="googlebot" content={keywords} />
       <meta name="keywords" content={keywords} />
       <meta name="theme-color" content="#151821" />
-      <meta property="og:site_name" chref={'Ashish Patel'} />
-      <meta property="og:title" content={title} />
-      <meta property="og:url" content={url} />
-      <meta property="og:type" content="website" />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:image:width" content={500} />
-      <meta property="og:image:height" content={700} />
       <meta itemProp="name" content={title} />
       <meta itemProp="url" content={url} />
       <meta itemProp="description" content={description} />

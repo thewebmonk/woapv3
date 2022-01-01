@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Sen:400,700&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #eee;
+  color: #222;
+  transition-duration: 0.4s;
+  font-family: 'Sen', sans-serif;
+}
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #111;
+  box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.3);
+  height: 60px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  .back {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    // position: absolute
+    left: 0;
+    height: 100%;
+    width: 60px;
+    color: #222;
+    text-align: center;
+    background-color: #eee;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .dark-switch {
+    right: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    p {
+      color: #ddd;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .switch {
+      width: 40px;
+      background-color: #eee;
+      box-shadow: 0px 0px 2px rgba($color: #000000, $alpha: 0.3) inset;
+      padding: 1px;
+      height: 17px;
+      border-radius: 20px;
+      margin-left: 20px;
+      position: relative;
+      transition-duration: 0.4s;
+      .switch-btn {
+        position: absolute;
+        left: -10%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 23px;
+        width: 23px;
+        background-color: #007bff;
+        border-radius: 50%;
+        transition-duration: 0.2s;
+      }
+    }
+  }
+}
+.header {
+  padding-top: 100px;
+  margin: 0;
+  color: #ddd;
+  border-radius: 0;
+  background-color: #111;
+  .author {
+    font-size: 30px;
+    color: #aaa;
+    font-weight: 700;
+  }
+  .git-btn {
+    text-align: right;
+  }
+  .dsc {
+    color: #ddd;
+    text-transform: capitalize;
+  }
+  .dsc-sm {
+    text-transform: none;
+    font-size: 13px;
+  }
+}
+
+.project-logo {
+  width: 100%;
+  img {
+    max-width: 400px;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.myimg {
+  max-width: 200px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px;
+  img {
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    object-fit: contain;
+    max-height: 250px;
+    transition-duration: 0.3s;
+  }
+  img:hover {
+    box-shadow: 0px 0px 8px #555;
+    transform: scale(1.02);
+  }
+}
+
+.nav-xs-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding-top: 30px;
+  background-color: #eee;
+  z-index: 5;
+  transition-duration: 0.4s;
+  transform: translateX(0);
+  a,
+  a:hover,
+  a:link,
+  a:active,
+  a:visited {
+    text-decoration: inherit;
+    font-style: inherit;
+    color: inherit;
+  }
+
+  .links {
+    padding: 40px 0;
+    // background-color: red;
+    li {
+      font-weight: 800;
+      padding: 7px 30px;
+      margin: 8px 0;
+      list-style-type: none;
+      font-size: 1.2em;
+      text-align: right;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+.doc-content {
+  padding: 80px;
+  padding-top: 0;
+  .section {
+    padding: 0px;
+    // border:  2px solid red;
+  }
+  hr {
+    border-top: 2px solid #999;
+    padding: 0;
+  }
+  code {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  pre {
+    background-color: #ddd;
+    font-weight: 200;
+    code {
+      font-weight: 200;
+    }
+  }
+  p {
+    font-size: 20px;
+    line-height: 2em;
+    .bullet-nums {
+      opacity: 0.4;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .ver-bar {
+      margin-right: 10px;
+      padding: 2px;
+      background-color: rgba($color: #ffc107, $alpha: 1);
+    }
+  }
+  .main-heading {
+    padding-top: 80px;
+    font-weight: 800;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+  .main-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 5px;
+    background-color: #007bff;
+  }
+  .secondary-heading {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .point-heading {
+    font-weight: 700;
+    color: #007bff;
+  }
+  table {
+    color: inherit;
+    .col-md-4 {
+      padding: 12px 0;
+    }
+    tbody {
+      font-size: 18px;
+    }
+    td {
+      border: 0;
+    }
+    tr {
+      border-bottom: 1px solid #888;
+    }
+    thead {
+      position: sticky;
+      background-color: #eee;
+      top: 60px;
+      z-index: 1;
+      font-size: 20px;
+      transition-duration: 0.4s;
+      font-weight: 700;
+      tr {
+        border-width: 0px;
+        // border-bottom: 3px solid #aaa;
+        box-shadow: 0 5px 10px #eee;
+        transition-duration: 0.4s;
+        text-decoration: underline;
+      }
+    }
+  }
+  .list {
+    p {
+      line-height: 25px;
+    }
+  }
+}
+
+.mybtn {
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  max-width: 300px;
+  border: 0px;
+  background-image: linear-gradient(80deg, #007bff, #ab55f2, #c855f2);
+  color: #fff;
+  border-radius: 30px;
+
+  .fa-github {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mybtn {
+    font-size: 15px;
+    padding: initial 10px;
+    width: auto;
+    margin-top: 10px;
+    .fa-github {
+      font-size: 18px;
+    }
+  }
+  .header {
+    .git-btn {
+      text-align: left;
+    }
+  }
+  .doc-content {
+    padding: 40px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .header {
+    .author {
+      font-size: 25px;
+    }
+  }
+  #demo {
+    padding-top: 20px;
+  }
+  .myimg {
+    max-width: 130px;
+    margin: 0;
+  }
+  nav {
+    position: fixed;
+    width: 70%;
+    padding-bottom: 0;
+    box-shadow: 2px 0 20px rgba($color: #000, $alpha: 0.6);
+    transform: translateX(-110%);
+  }
+  .doc-content {
+    padding: 35px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .mybtn {
+    font-size: 13px;
+    padding: initial 10px;
+    width: auto;
+  }
+}

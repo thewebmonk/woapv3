@@ -3,6 +3,14 @@ const path = require(`path`);
 exports.onPostBuild = ({ reporter }) => {
   reporter.info(`Your Gatsby site has been built!`);
 };
+exports.createPages = async ({ graphql, actions }) => {
+  const { createRedirect } = actions;
+  createRedirect({
+    fromPath: `/zoombox`,
+    toPath: `/projects/docs/ZoomBox--An-Interactive-and-feature-rich-vanilla-JavaScript-image-viewer-plugin-for-developers`,
+    isPermanent: true
+  });
+};
 // Create blog pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
