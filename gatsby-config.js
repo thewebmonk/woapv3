@@ -44,6 +44,30 @@ module.exports = {
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CTF_CDA_TOKEN
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'UA-142575352-1',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: [],
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        // Defers execution of google analytics script after page load
+        defer: false,
+        // Any additional optional fields
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        // defaults to false
+        enableWebVitalsTracking: true
+      }
     }
   ]
 };
