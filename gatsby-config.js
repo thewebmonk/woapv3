@@ -3,14 +3,13 @@ require('dotenv').config({
 });
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'Writing Habit'
+    siteUrl: 'https://worldsofashishpatel.com/',
+    title: 'Worlds of Ashish Patel'
   },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-readingtime-contentful',
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
     {

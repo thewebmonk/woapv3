@@ -1,5 +1,7 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import getReadTime from 'easy-read-time';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import SEO from '../common/Seo';
 import NavBar from '../nav';
@@ -58,6 +60,8 @@ const BlogPage = ({ pageContext, data }) => {
       }
     }
   };
+
+  const readTime = getReadTime(documentToHtmlString(body, options));
   return (
     <>
       <SEO
@@ -85,7 +89,9 @@ const BlogPage = ({ pageContext, data }) => {
                   </div>
                   <span className="text-white-50 ms-3 ">By Ashish Patel</span>
                 </div>
-                <span className="text-white-50">10 Min Read</span>
+                <span className="text-white-50">
+                  {readTime.formattedString}
+                </span>
               </div>
             </div>
             <article className="mt-4 pt-3">

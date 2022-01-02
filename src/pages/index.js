@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
         <Landing />
         <div className="container mt-4 mt-md-5 pt-0 pt-md-5">
           <h4 className="text-center mt-0 mt-md-5 fs-6 text-white-50">
-            Recent Blogs
+            Continue with blogs
           </h4>
           <div className="row m-0 p-0 mt-2  mb-4">
             {blogs.map((blog) => (
