@@ -1,7 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
-const Button = ({ text, type, onClick, className = '', ...rest }) => {
+const Button = ({
+  text,
+  type,
+  onClick,
+  className = '',
+  link = '',
+  ...rest
+}) => {
+  // const Button  = ()
+  if (link) {
+    return (
+      <Link
+        to={link}
+        {...rest}
+        onClick={onClick}
+        className={`button ${type} ${className}`}
+      >
+        {text}
+      </Link>
+    );
+  }
   return (
     <button
       {...rest}

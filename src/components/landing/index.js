@@ -18,12 +18,14 @@ const Landing = () => {
           text="Read Blogs"
           onClick={() => {}}
           type="primary"
+          link="/blogs"
         />
         <Button
           className="ms-2"
           text="Portfolio"
           onClick={() => {}}
           type="primary-outline"
+          link="/portfolio"
         />
       </div>
     </div>

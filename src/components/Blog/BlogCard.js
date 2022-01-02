@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-const BlogCard = ({ title, date, link, image = '' }) => {
+const BlogCard = ({ title, date, link, image = '', className = '' }) => {
   return (
     <Link to={link}>
-      <div className="blog-card">
+      <div className={'blog-card ' + className}>
         <div className="image">
           <img src={image} />
         </div>

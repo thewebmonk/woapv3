@@ -98,6 +98,7 @@ nav {
   border: 2px solid $red;
   border-radius: 0.2rem;
   font-size: 13px;
+  display: inline-block;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
