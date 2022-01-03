@@ -4,10 +4,9 @@ import { createClient } from 'contentful';
 import { Link } from 'gatsby';
 import { transformSearchResult } from '../../../transformers';
 import { useIsMobile } from '../../../hooks';
-
 const client = createClient({
-  space: process.env.CTF_SPACE_ID,
-  accessToken: process.env.CTF_CDA_TOKEN
+  space: process.env.GATSBY_CTF_SPACE_ID,
+  accessToken: process.env.GATSBY_CTF_CDA_TOKEN
 });
 
 const Search = () => {
@@ -35,7 +34,7 @@ const Search = () => {
         });
         setResults(transformSearchResult(res));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     }, 500);
   };
