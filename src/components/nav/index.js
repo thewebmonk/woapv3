@@ -54,7 +54,6 @@ const Nav = () => {
             className="links d-flex d-md-none"
             onClick={() => {
               setShowMenu(false);
-              console.log(showMenu);
             }}
           >
             <div
