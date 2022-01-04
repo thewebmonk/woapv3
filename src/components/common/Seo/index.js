@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { SITE_ICON } from '../../../constants';
 
 const SEO = ({ title, description, image, keywords, url }) => {
   // console.log(title, description, image, keywords);
@@ -35,7 +36,7 @@ const SEO = ({ title, description, image, keywords, url }) => {
       <meta itemProp="url" content={url} />
       <meta itemProp="description" content={description} />
       <meta itemProp="thumbnailUrl" content={image} />
-      <link rel="image_src" href={image} />
+      <link rel="image_src" href={SITE_ICON} />
       <meta itemProp="image" content={image} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:image" content={image} />
