@@ -22,7 +22,7 @@ const SEO = ({ title, description, image, keywords, url }) => {
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0"
       />
-      <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+      <link rel="shortcut icon" type="image/x-icon" href={SITE_ICON} />
       <link rel="canonical" href={url} />
       <meta
         name="google-site-verification"
