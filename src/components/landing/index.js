@@ -1,7 +1,5 @@
 import React from 'react';
 import Button from '../common/Button';
-import Particles from 'react-tsparticles';
-import { config } from '../../constants/particles';
 
 const Landing = () => {
   return (

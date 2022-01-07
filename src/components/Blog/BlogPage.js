@@ -82,7 +82,7 @@ const BlogPage = ({ pageContext, data }) => {
               <div className="overlay"></div>
               <span className="text-white-50 fs-md-4">{date}</span>
               <h1 className="text-white fw-bolder mt-3">{blog.title}</h1>
-              <div className="meta mt-4 pt-3 pt-md-4 d-flex justify-content-between align-items-center">
+              <div className="meta mt-2 mt-md-3 pt-3 pt-md-4 d-flex justify-content-between align-items-center">
                 <div className="author-details d-flex align-items-center">
                   <div className="avatar">
                     <img src={Ash} className="img-fluid" />
@@ -94,7 +94,7 @@ const BlogPage = ({ pageContext, data }) => {
                 </span>
               </div>
             </div>
-            <article className="mt-4 pt-3">
+            <article className="mt-2 mt-md-3 pt-3">
               {documentToReactComponents(body, options)}
             </article>
             <hr className="mt-4 mb-5" />

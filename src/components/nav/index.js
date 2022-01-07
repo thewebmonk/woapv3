@@ -20,7 +20,7 @@ const Nav = () => {
   });
 
   return (
-    <nav>
+    <nav className="container ps-0 pe-0">
       <div className="brand-with-search">
         <div className="brand">
           <Link to="/">

@@ -4,6 +4,8 @@ import { createClient } from 'contentful';
 import { Link } from 'gatsby';
 import { transformSearchResult } from '../../../transformers';
 import { useIsMobile } from '../../../hooks';
+import _ from 'lodash';
+
 const client = createClient({
   space: process.env.GATSBY_CTF_SPACE_ID,
   accessToken: process.env.GATSBY_CTF_CDA_TOKEN
@@ -13,31 +15,27 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [focus, setFocus] = useState(false);
   const [searchText, setSearchText] = useState('');
-  let timeVar = null;
   const isMobile = useIsMobile(1200);
   const inputRef = useRef(null);
 
-  const onSeach = (e) => {
-    clearTimeout(timeVar);
+  const onSeach = _.debounce(async (e) => {
     const query = e.target.value;
     setSearchText(query);
     if (!query) {
       setResults([]);
       return;
     }
-    timeVar = setTimeout(async () => {
-      try {
-        const res = await client.getEntries({
-          content_type: 'blog',
-          select: 'fields.title,fields.slug',
-          'fields.title[match]': query
-        });
-        setResults(transformSearchResult(res));
-      } catch (err) {
-        // console.log(err);
-      }
-    }, 500);
-  };
+    try {
+      const res = await client.getEntries({
+        content_type: 'blog',
+        select: 'fields.title,fields.slug',
+        'fields.title[match]': query
+      });
+      setResults(transformSearchResult(res));
+    } catch (err) {
+      // console.log(err);
+    }
+  }, 500);
   const handleBlur = (e) => {
     setFocus(false);
     setResults([]);

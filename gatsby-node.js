@@ -31,6 +31,14 @@ exports.createPages = async ({ graphql, actions }) => {
                   url
                 }
               }
+              ... on ContentfulCodeBlock {
+                contentful_id
+                __typename
+                language
+                code {
+                  code
+                }
+              }
             }
           }
           createdAt
