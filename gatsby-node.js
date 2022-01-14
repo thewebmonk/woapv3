@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allContentfulBlog.nodes.forEach((node) => {
     createPage({
-      path: `/blog/${node.slug}`,
+      path: `/blog/${node.slug}/`,
       component: blogPostTemplate,
       context: {
         data: node,
@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   result.data.allContentfulProject.nodes.forEach((node) => {
     createPage({
-      path: `/project/${node.slug}`,
+      path: `/project/${node.slug}/`,
       component: blogPostTemplate,
       context: {
         data: node

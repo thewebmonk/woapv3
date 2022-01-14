@@ -68,7 +68,7 @@ const BlogPage = ({ pageContext, data }) => {
         {...{
           ...blog.seo,
           image: ctfAssetUrl(blog.thumb.file.url),
-          url: (isProject ? PROJECT_URL : BLOG_URL) + blog.slug
+          url: (isProject ? PROJECT_URL : BLOG_URL) + blog.slug + '/'
         }}
       />
       <NavBar />

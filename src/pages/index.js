@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
               <div className="col-md-4 mt-3">
                 <BlogCard
                   title={blog.title}
-                  link={`/blog/${blog.slug}`}
+                  link={`/blog/${blog.slug}/`}
                   date={humanizeTimeStamp(blog.createdAtOld || blog.createdAt)}
                   image={blog.thumb.file.url}
                 />
