@@ -3,7 +3,7 @@ import NavBar from '../components/nav';
 import Footer from '../components/Footer';
 import '../assets/scss/pages.scss';
 import '../assets/scss/resume.scss';
-import Breadcrumb from '../components/common/Broadcrumb/breadcrumb';
+import Breadcrumb from '../components/common/Broadcrumb/Breadcrumb';
 import { object } from 'prop-types';
 import { resume } from '../data/resume-data';
 import SEO from '../components/common/Seo';
