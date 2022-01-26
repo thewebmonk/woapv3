@@ -1,0 +1,16 @@
+.pages-breadcrumb {
+  color: #fff;
+  a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  a::after {
+    content: ' / ';
+  }
+  a:last-child {
+    font-size: 18px;
+    color: #fff;
+  }
+  a:last-child:after {
+    content: '';
+  }
+}

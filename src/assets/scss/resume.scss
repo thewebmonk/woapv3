@@ -1,0 +1,33 @@
+.resume {
+  color: rgba(255, 255, 255, 0.6);
+  h1 {
+    font-weight: 600;
+  }
+  a {
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+  hr {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    margin: 40px 0 !important;
+  }
+  h5 {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+  h6,
+  p {
+    margin-bottom: 10px;
+    margin-top: 0 !important;
+  }
+  h6 {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8rem;
+    span {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+    }
+  }
+}

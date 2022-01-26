@@ -8,6 +8,7 @@ body {
   background-color: $blue;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  font-size: 16px;
 }
 .container-ladning {
   padding: 1.5rem 10% !important;
@@ -271,6 +272,9 @@ a {
 footer {
   background-color: $red;
   margin-top: 100px;
+  .credit a {
+    text-decoration: underline;
+  }
 }
 
 // helpers
