@@ -3,7 +3,7 @@ import NavBar from '../components/nav';
 import Footer from '../components/Footer';
 import InDev from '../components/InDev';
 import SEO from '../components/common/Seo';
-import { CONTACT_URL } from '../constants';
+import { CONTACT_URL, SITE_IMAGE } from '../constants';
 
 const Portfolio = () => {
   return (

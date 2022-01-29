@@ -7,7 +7,7 @@ import BlogCard from '../components/Blog/BlogCard';
 import Footer from '../components/Footer';
 import { graphql } from 'gatsby';
 import { humanizeTimeStamp } from '../utils';
-import { BLOGS_URL } from '../constants';
+import { BLOGS_URL, SITE_IMAGE } from '../constants';
 
 // markup
 const IndexPage = ({ data }) => {
