@@ -89,14 +89,10 @@ const BlogPage = ({ pageContext, data }) => {
                   </div>
                   <span className="text-white-50 ms-3 ">By Ashish Patel</span>
                 </div>
-                <span className="text-white-50">
-                  {readTime.formattedString}
-                </span>
+                <span className="text-white-50">{readTime.formattedString}</span>
               </div>
             </div>
-            <article className="mt-2 mt-md-3 pt-3">
-              {documentToReactComponents(body, options)}
-            </article>
+            <article className="mt-2 mt-md-3 pt-3">{documentToReactComponents(body, options)}</article>
             <hr className="mt-4 mb-5" />
           </div>
 
@@ -105,10 +101,7 @@ const BlogPage = ({ pageContext, data }) => {
             <div className="position-sticky  bottom-0 pb-3">
               <h5 className="mb-3">Recent Blogs</h5>
               {data.allContentfulBlog.nodes.map((blog, index) => (
-                <SuggestedBlogs
-                  key={index}
-                  {...{ ...blog, className: 'suggested-blogs' }}
-                />
+                <SuggestedBlogs key={index} {...{ ...blog, className: 'suggested-blogs' }} />
               ))}
             </div>
           </div>

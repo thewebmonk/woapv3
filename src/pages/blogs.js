@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
           description="I'm a passionate full stack web developer, a website is not just about technologies its more about business. So I just not build amazing website but a great business as well. My teck stack revolves around JavaScript including react, vue, nodejs, MERN and JAMstack."
           keywords="javascript, react, vuejs, developer, software engineer, nodejs, express, website, web developer, user interface, ui ux, blogs, articles, portfolio, jamshedpur, india"
           url={BLOGS_URL}
-          image=""
+          image={SITE_IMAGE}
         />
         <NavBar />
         <div className="container mt-md-2 pt-0 pt-md-5">

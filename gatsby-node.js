@@ -3,7 +3,7 @@ const path = require(`path`);
 exports.onPostBuild = ({ reporter }) => {
   reporter.info(`Your Gatsby site has been built!`);
 };
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions }) => {
   const { createRedirect } = actions;
   createRedirect({
     fromPath: `/zoombox`,
@@ -65,8 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/${node.slug}/`,
       component: blogPostTemplate,
       context: {
-        data: node,
-        isProject: true
+        data: node
       }
     });
   });
@@ -112,7 +111,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/project/${node.slug}/`,
       component: blogPostTemplate,
       context: {
-        data: node
+        data: node,
+        isProject: true
       }
     });
   });

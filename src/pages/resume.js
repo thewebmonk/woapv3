@@ -18,10 +18,10 @@ const Portfolio = () => {
     <>
       <SEO
         title="Resume | Ashish Patel: Full stack web developer | Headleass CMSs | React | JamStack | Express | Vue.js "
-        description="I'm a passionate full stack web developer, a website is not just about technologies its more about business. So I just not build amazing website but a great business as well. My teck stack revolves around JavaScript including react, vue, nodejs, MERN and JAMstack."
+        description="I'm a passionate full stack web developer, my teck stack revolves around JavaScript including react, vue, nodejs, MERN and JAMstack."
         keywords="resume, resume builder, resume examples, cv, cv builder, develoepr resume, developer jobs ,javascript, react, vuejs"
         url={RESUME_URL}
-        image=""
+        image={SITE_IMAGE}
       />
       <div className="min-vh-100 ">
         <NavBar />
