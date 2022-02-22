@@ -11,8 +11,8 @@ import { ctfAssetUrl, humanizeTimeStamp } from '../../utils';
 import PrismCode from 'react-prism';
 import 'prismjs';
 import 'prismjs/components/prism-jsx.min';
-import 'prismjs/themes/prism-tomorrow.css';
 import '../../assets/scss/blog.scss';
+import '../../assets/css/prism.css';
 import SuggestedBlogs from './SuggestedBlogs';
 import { graphql } from 'gatsby';
 import { BLOG_URL, PROJECT_URL } from '../../constants';
@@ -44,9 +44,10 @@ const BlogPage = ({ pageContext, data }) => {
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
         const asset = getAssets(node.data.target.sys.id);
+        console.log(asset);
         return (
           <pre>
-            <PrismCode className="language-js">{asset.code.code}</PrismCode>
+            <PrismCode className={`language-${asset.language}`}>{asset.code.code}</PrismCode>
           </pre>
         );
       },
