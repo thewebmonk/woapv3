@@ -54,40 +54,20 @@ const Search = () => {
     }
   }, [focus]);
   return (
-    <div
-      className={`search-box ${isMobile && focus ? 'search-box-mobile' : ''} ${
-        focus ? 'search-box-focused' : ''
-      }`}
-    >
+    <div className={`search-box ${isMobile && focus ? 'search-box-mobile' : ''} ${focus ? 'search-box-focused' : ''}`}>
       {focus && <div className="overlay" onClick={handleBlur}></div>}
-      <input
-        ref={inputRef}
-        onFocus={() => setFocus(true)}
-        onChange={onSeach}
-        placeholder="type here to search..."
-      />
-      <img
-        className="search-icon"
-        src={searchIcon}
-        alt="Search Icon"
-        onClick={handleImageClick}
-      />
+      <input ref={inputRef} onFocus={() => setFocus(true)} onChange={onSeach} placeholder="type here to search..." />
+      <img className="search-icon" src={searchIcon} alt="Search Icon" onClick={handleImageClick} />
       {focus && (
         <div className="search-result">
           {results.length ? (
             results.map((result) => (
-              <Link
-                onClick={() => console.log('helllo')}
-                className="result"
-                to={`/blog/${result.slug}`}
-              >
+              <Link key={result.slug} className="result" to={`/blog/${result.slug}`}>
                 <h5 className="title">{result.title}</h5>
               </Link>
             ))
           ) : (
-            <p className="text-white p-3 m-0 text-center">
-              {searchText ? 'No result found for your search' : ''}
-            </p>
+            <p className="text-white p-3 m-0 text-center">{searchText ? 'No result found for your search' : ''}</p>
           )}
         </div>
       )}

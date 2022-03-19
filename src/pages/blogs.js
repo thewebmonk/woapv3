@@ -9,6 +9,7 @@ import { graphql } from 'gatsby';
 import { humanizeTimeStamp } from '../utils';
 import { BLOGS_URL, SITE_IMAGE } from '../constants';
 import Breadcrumb from '../components/common/Broadcrumb/Breadcrumb';
+import moment from 'moment';
 
 // markup
 const IndexPage = ({ data }) => {
@@ -17,6 +18,10 @@ const IndexPage = ({ data }) => {
     { name: 'Blogs', link: '/blogs/' }
   ];
   const blogs = data.allContentfulBlog.nodes;
+  blogs.sort((aBlog, bBlog) => {
+    const exg = moment(aBlog.createdAtOld ? aBlog.createdAtOld : aBlog.createdAt).isAfter(bBlog.createdAt);
+    return exg ? -1 : 1;
+  });
   return (
     <>
       <div className="min-vh-100 ">
@@ -32,11 +37,11 @@ const IndexPage = ({ data }) => {
           <Breadcrumb className="mt-3 d-block" breadcrumbs={breadcrumbs} />
           <div className="row m-0 p-0 mt-2  mb-4">
             {blogs.map((blog) => (
-              <div className="col-md-4 mt-3 p-0 p-md-2">
+              <div key={blog.slug} className="col-md-4 mt-3 p-0 p-md-2">
                 <BlogCard
                   title={blog.title}
                   link={`/blog/${blog.slug}/`}
-                  date={humanizeTimeStamp(blog.createdAt)}
+                  date={humanizeTimeStamp(blog.createdAtOld ? blog.createdAtOld : blog.createdAt)}
                   image={blog.thumb.file.url}
                 />
               </div>
@@ -59,6 +64,7 @@ export const assetQuery = graphql`
         title
         updatedAt
         createdAt
+        createdAtOld
         thumb {
           file {
             url

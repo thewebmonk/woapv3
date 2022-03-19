@@ -45,7 +45,6 @@ const BlogPage = ({ pageContext, data }) => {
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
         const asset = getAssets(node.data.target.sys.id);
-        console.log(asset);
         return (
           <pre>
             <PrismCode className={`language-${asset.language}`}>{asset.code.code}</PrismCode>
