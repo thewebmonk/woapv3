@@ -16,6 +16,7 @@ import '../../assets/css/prism.css';
 import SuggestedBlogs from './SuggestedBlogs';
 import { graphql } from 'gatsby';
 import { BLOG_URL, PROJECT_URL } from '../../constants';
+import Breadcrumb from '../common/Broadcrumb/Breadcrumb';
 
 const BlogPage = ({ pageContext, data }) => {
   const blog = pageContext.data;
@@ -63,6 +64,11 @@ const BlogPage = ({ pageContext, data }) => {
   };
 
   const readTime = getReadTime(documentToHtmlString(body, options));
+
+  const breadcrumbs = [
+    { name: 'Home', link: '/' },
+    { name: 'Blogs', link: '/blogs/' }
+  ];
   return (
     <>
       <SEO
@@ -81,7 +87,10 @@ const BlogPage = ({ pageContext, data }) => {
                 <img src={blog.thumb.file.url}></img>
               </div>
               <div className="overlay"></div>
-              <span className="text-white-50 fs-md-4">{date}</span>
+              <div className="d-flex justify-content-between align-items-center">
+                <Breadcrumb className="d-block" breadcrumbs={breadcrumbs} />
+                <span className="text-white-50 fs-md-4">{date}</span>
+              </div>
               <h1 className="text-white fw-bolder mt-3">{blog.title}</h1>
               <div className="meta mt-2 mt-md-3 pt-3 pt-md-4 d-flex justify-content-between align-items-center">
                 <div className="author-details d-flex align-items-center">

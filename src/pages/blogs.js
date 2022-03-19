@@ -8,9 +8,14 @@ import Footer from '../components/Footer';
 import { graphql } from 'gatsby';
 import { humanizeTimeStamp } from '../utils';
 import { BLOGS_URL, SITE_IMAGE } from '../constants';
+import Breadcrumb from '../components/common/Broadcrumb/Breadcrumb';
 
 // markup
 const IndexPage = ({ data }) => {
+  const breadcrumbs = [
+    { name: 'Home', link: '/' },
+    { name: 'Blogs', link: '/blogs/' }
+  ];
   const blogs = data.allContentfulBlog.nodes;
   return (
     <>
@@ -23,9 +28,8 @@ const IndexPage = ({ data }) => {
           image={SITE_IMAGE}
         />
         <NavBar />
-        <div className="container mt-md-2 pt-0 pt-md-5">
-          <h1 className="text-white display-1 fw-bolder text-center mb-4">Blogs</h1>
-          <h4 className="text-center mt-0 mt-md-5 fs-6 text-white-50">Recent Blogs</h4>
+        <div className="container mt-md-2 p-0">
+          <Breadcrumb className="mt-3 d-block" breadcrumbs={breadcrumbs} />
           <div className="row m-0 p-0 mt-2  mb-4">
             {blogs.map((blog) => (
               <div className="col-md-4 mt-3 p-0 p-md-2">

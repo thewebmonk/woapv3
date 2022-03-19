@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
           <h4 className="text-center mt-0 mt-md-5 fs-6 text-white-50">Continue with blogs</h4>
           <div className="row m-0 p-0 mt-2  mb-4">
             {blogs.map((blog) => (
-              <div className="col-md-4 mt-3">
+              <div className="col-md-4 mt-4 mb-md-3 p-0 ps-md-2 pe-md-2">
                 <BlogCard
                   title={blog.title}
                   link={`/blog/${blog.slug}/`}
