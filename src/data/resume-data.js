@@ -13,7 +13,7 @@ export const resume = {
   ],
   EXPERIENCE: [
     {
-      title: 'UI / UX Developer',
+      title: 'UI / UX Engineer',
       subtitle: 'Webline India, Ahemedabad, India (June 2021 to Present)',
       para: "My primary role is to give life to design mocks and integrating APIs primarily using javascript, react.js, redux, Gatsby, vuejs, and nuxtjs. Exposure to backend technologies like express, APIs, Headless CMSs and DevOps process. <p>I've been following scrum methodology that enables me doing weekly releases, sprint palling, calculating story points and monthly retrospective meeting. </p>"
     }

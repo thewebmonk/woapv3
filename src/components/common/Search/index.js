@@ -56,7 +56,7 @@ const Search = () => {
   return (
     <div className={`search-box ${isMobile && focus ? 'search-box-mobile' : ''} ${focus ? 'search-box-focused' : ''}`}>
       {focus && <div className="overlay" onClick={handleBlur}></div>}
-      <input ref={inputRef} onFocus={() => setFocus(true)} onChange={onSeach} placeholder="type here to search..." />
+      <input ref={inputRef} onFocus={() => setFocus(true)} onChange={onSeach} placeholder="type 'react' to search" />
       <img className="search-icon" src={searchIcon} alt="Search Icon" onClick={handleImageClick} />
       {focus && (
         <div className="search-result">

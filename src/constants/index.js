@@ -6,3 +6,4 @@ export const BLOG_URL = 'https://worldsofashishpatel.com/blog/';
 export const PROJECT_URL = 'https://worldsofashishpatel.com/project/';
 export const SITE_ICON = 'https://worldsofashishpatel.com/assets/images/logo.png';
 export const SITE_IMAGE = 'https://worldsofashishpatel.com/assets/images/ash.jpg';
+export const ZOOMBOX_URL = 'https://worldsofashishpatel.com/projects/zoombox/';

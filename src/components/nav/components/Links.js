@@ -7,6 +7,7 @@ const Links = () => {
       <Link to="/blogs/">Blogs</Link>
       <Link to="/resume/">Resume</Link>
       <Link to="/contact/">Contact</Link>
+      <Link to="/projects/zoombox/">ZoomBox</Link>
     </>
   );
 };

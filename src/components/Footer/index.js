@@ -18,7 +18,7 @@ const Footer = ({ ...rest }) => {
           </Link>
         </div>
       </div>
-      <div className="container text-white opacity-75 text-center credit">
+      <div className="container text-white opacity-75 text-center credit pb-4">
         <small>
           <small>
             Built with{' '}

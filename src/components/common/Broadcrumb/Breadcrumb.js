@@ -7,7 +7,7 @@ const Breadcrumb = ({ breadcrumbs = [], className = '' }) => {
     <div className={`pages-breadcrumb ${className}`}>
       {breadcrumbs.map((bread, index) => {
         return (
-          <Link key={index} to={bread?.link}>
+          <Link key={index} to={bread?.link ? bread?.link : '#'}>
             {bread?.name}
           </Link>
         );
