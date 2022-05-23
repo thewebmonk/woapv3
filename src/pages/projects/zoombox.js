@@ -135,8 +135,10 @@ export default App;`}
           </pre>
           <h5 className="text-white mt-5">Features yet to come</h5>
           <ul className="text-white-50">
+            <li className="mb-3">Lazy loading</li>
             <li className="mb-3 mt-3">Touch control for mobile devices</li>
             <li className="mb-3">Slide show</li>
+            <li className="mb-3">Image Drag</li>
           </ul>
         </div>
       </div>
