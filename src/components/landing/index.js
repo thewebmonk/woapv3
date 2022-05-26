@@ -4,7 +4,7 @@ import Button from '../common/Button';
 const Landing = () => {
   return (
     <div className="landing container">
-      <p className="text-center mt-0 mt-md-4">HI, I’m Ashish Patel, a Full stack web developer</p>
+      <p className="text-center mt-0 mt-md-4">HI, I’m Ashish Patel, a space enthusiast software engineer.</p>
       <h1>
         I build amazing user interfaces, APIs, <br /> Apps and much more !
       </h1>
