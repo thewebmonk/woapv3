@@ -1,0 +1,30 @@
+@import './variable.scss';
+.min-100-vh {
+  position: relative;
+}
+.homeoverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  filter: blur(2px);
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: $blue, $alpha: 0.8);
+  z-index: -1;
+}
+.home {
+  background-image: url('/src/');
+}
