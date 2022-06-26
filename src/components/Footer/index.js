@@ -13,8 +13,11 @@ const Footer = ({ ...rest }) => {
           <Link className="text-white opacity-75 me-2" to="/resume/">
             Resume
           </Link>
-          <Link className="text-white opacity-75 ms-2" to="/blogs/">
+          <Link className="text-white opacity-75 ms-2 me-2" to="/blogs/">
             Blogs
+          </Link>
+          <Link className="text-white opacity-75 ms-2" to="/projects/">
+            Projects
           </Link>
         </div>
       </div>

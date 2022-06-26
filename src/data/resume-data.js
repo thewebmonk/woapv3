@@ -32,8 +32,12 @@ export const resume = {
   ],
   SKILLS: [
     {
-      title: 'HTML / CSS',
+      title: 'HTML / SCSS',
       para: 'Alwaya kept my fundamentals strong with these 2 technologies, that makes me more indemendent with UI development.'
+    },
+    {
+      title: 'JavaScript / ES6 / ES7 / ES2020',
+      para: 'It is my primary programming language, from basics to advanced concepts and DSA I have a good command over it.'
     },
     {
       title: 'React',
@@ -56,8 +60,28 @@ export const resume = {
       para: 'Having experience with building APIs, authentication, authorization, and solving complex problems for achieving functionalities like text extraction from AWS Textract.'
     },
     {
+      title: 'DBMS',
+      para: 'Having good command over the essentials of DBMS like relations, joins, sql queries and exposure to non-relational DB like MongoDB'
+    },
+    {
       title: 'Agile / Scrum',
       para: 'Following these software development life cycles and most of my projects, and doing weekly releases, sprint planning, and standup calls are most importent part of my work.'
+    },
+    {
+      title: 'Python',
+      para: 'Python as a secondary programming language always keep me open for more work opportunities with it.'
+    }
+  ],
+  PROJECTS: [
+    {
+      title: 'ZoomBox',
+      subtitle: 'An interactive vanilla javascript image viewer plugin.',
+      para: '<a class="link text-primary" href="https://worldsofashishpatel.com/zoombox" target="_blank" rel="noreferrer">Live Demo</a>'
+    },
+    {
+      title: 'ZoomBox for React apps',
+      subtitle: 'Image Viewer library for react apps, publised in npm.',
+      para: '<a class="link text-primary" href="https://www.npmjs.com/package/zoombox" target="_blank" rel="noreferrer">Live Demo</a>'
     }
   ],
   ABILITIES: [
@@ -66,6 +90,9 @@ export const resume = {
     },
     {
       para: 'I believe in teamwork and I can manage my team if assigned as a team leader.'
+    },
+    {
+      para: 'Good mentoring capabilities, which helps me in good knowledge transfer and training junior developers.'
     }
   ]
 };

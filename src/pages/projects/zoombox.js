@@ -15,7 +15,7 @@ const zoombox = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const breadcrumbs = [
     { name: 'Home', link: '/' },
-    { name: 'Projects', link: '' },
+    { name: 'Projects', link: '/projects/' },
     { name: 'Zoombox', link: '/projects/zoombox/' }
   ];
   const images = [
@@ -79,7 +79,7 @@ const zoombox = () => {
           <p className="text-white-50 mb-2">Click / Tap below images</p>
           <div className="row m-0 p-0">
             {images.map((image, index) => (
-              <div className={`col-md-4 mt-3 p-0 pe-0 ps-0 ${(index + 1) % 3 === 0 ? '' : 'pe-md-4'}`}>
+              <div key={index} className={`col-md-4 mt-3 p-0 pe-0 ps-0 ${(index + 1) % 3 === 0 ? '' : 'pe-md-4'}`}>
                 <img
                   onClick={() => {
                     setSelectedImage(index);
