@@ -11887,10 +11887,10 @@ yurnalist@^2.1.0:
     read "^1.0.7"
     strip-ansi "^5.2.0"
 
-zoombox@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/zoombox/-/zoombox-1.1.8.tgz#ba683406a438961f0256059623d4f969d7855868"
-  integrity sha512-qoqYCa25du6FGkh09ZkrNVXsYDBYlOanDPFL6G86d5jT8zYcC2XZBtxpkeIHiqioQcRejd4c6xgX6fYJMtDhMw==
+zoombox@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/zoombox/-/zoombox-1.3.0.tgz#b37e9f6184078b2b95b14172a0f0a2be2c971cc9"
+  integrity sha512-LZbsYqrmpm8xJpHbro+zfytCa0ESCN/oHTygrfxC+pta5lGaBuQ6799QPj8DqWfUO4T+I1qeRoGM2LAFlwvfNg==
 
 zwitch@^2.0.0:
   version "2.0.2"

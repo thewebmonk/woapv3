@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import getReadTime from 'easy-read-time';
@@ -17,8 +17,11 @@ import SuggestedBlogs from './SuggestedBlogs';
 import { graphql } from 'gatsby';
 import { BLOG_URL, PROJECT_URL } from '../../constants';
 import Breadcrumb from '../common/Broadcrumb/Breadcrumb';
+import Zoombox from 'zoombox';
 
 const BlogPage = ({ pageContext, data }) => {
+  const [active, setActive] = useState(false);
+  const containerRef = useRef(null);
   const blog = pageContext.data;
   const isProject = pageContext.isProject;
   const body = JSON.parse(blog.body.raw);
@@ -39,7 +42,7 @@ const BlogPage = ({ pageContext, data }) => {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const asset = getAssets(node.data.target.sys.id);
         if (asset) {
-          return <img src={asset.file.url} alt="Blog Embed Image" />;
+          return <img data-zoombox src={asset.file.url} alt="Blog Embed Image" />;
         }
         return null;
       },
@@ -101,7 +104,9 @@ const BlogPage = ({ pageContext, data }) => {
                 <span className="text-white-50">{readTime.formattedString}</span>
               </div>
             </div>
-            <article className="mt-2 mt-md-3 pt-3">{documentToReactComponents(body, options)}</article>
+            <article ref={containerRef} className="mt-2 mt-md-3 pt-3">
+              {documentToReactComponents(body, options)}
+            </article>
             <hr className="mt-4 mb-5" />
           </div>
 
@@ -116,6 +121,7 @@ const BlogPage = ({ pageContext, data }) => {
           </div>
         </div>
       </div>
+      <Zoombox {...{ active, setActive, containerRef, showCredits: true, lockBodyScroll: true }} />
       <Footer />
     </>
   );

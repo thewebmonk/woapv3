@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Breadcrumb from '../../components/common/Broadcrumb/Breadcrumb';
 import SEO from '../../components/common/Seo';
 import NavBar from '../../components/nav';
@@ -12,7 +12,7 @@ import Footer from '../../components/Footer';
 
 const zoombox = () => {
   const [active, setActive] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(0);
+  const containerRef = useRef(null);
   const breadcrumbs = [
     { name: 'Home', link: '/' },
     { name: 'Projects', link: '/projects/' },
@@ -34,7 +34,7 @@ const zoombox = () => {
   ];
   return (
     <>
-      <div className="min-vh-100 ">
+      <div className="min-vh-100 " ref={containerRef}>
         <SEO
           title="ZoomBox | Image viewer library for react apps | Ashish Patel  "
           description="Zoombox : An Interactive React Image Viewer Library with zooming options"
@@ -81,10 +81,8 @@ const zoombox = () => {
             {images.map((image, index) => (
               <div key={index} className={`col-md-4 mt-3 p-0 pe-0 ps-0 ${(index + 1) % 3 === 0 ? '' : 'pe-md-4'}`}>
                 <img
-                  onClick={() => {
-                    setSelectedImage(index);
-                    setActive(true);
-                  }}
+                  data-zoombox
+                  data-caption={image.caption}
                   className="img-fluid zoombox-image"
                   src={image.src}
                   alt={image.caption}
@@ -144,12 +142,14 @@ export default App;`}
       </div>
       <Zoombox
         {...{
-          images,
+          containerRef,
           active,
           setActive,
-          selectedImage,
           maskOpacity: 0.9,
-          maskClosable: true
+          maskClosable: true,
+          dbClickToZoom: true,
+          enableImageDragBeta: true,
+          showCredits: true
         }}
       />
       <Footer />
