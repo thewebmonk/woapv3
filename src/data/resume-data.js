@@ -16,11 +16,6 @@ export const resume = {
       title: 'UI / UX Engineer',
       subtitle: 'Webline India, Ahemedabad, India (June 2021 to Present)',
       para: "My primary role is to give life to design mocks and integrating APIs primarily using javascript, react.js, redux, Gatsby, vuejs, and nuxtjs. Exposure to backend technologies like express, APIs, Headless CMSs and DevOps process. <>I've been following scrum methodology that enables me doing weekly releases, sprint palling, calculating story points and monthly retrospective meeting."
-    },
-    {
-      title: 'Full Stack Engineer',
-      subtitle: 'Randsbarg, Jamshedpur, India (May 2020 to May 2021)',
-      para: "As a full stack engineer, I managed the company's owned LMS which includes doing API and UI side development, I solved various other problems related to business requirements and implemented sales funnel in a website."
     }
   ],
   TRAININGS: [
